@@ -30,13 +30,12 @@ def open_program(program):
 
 check_if_closed = lambda x: len(getWindowsWithTitle(x.title)) == 0
 
-if __name__ == "__main__":
-  for program in programs:
-    try:
-      if check_if_closed(program):
-        print(f"Opening program: {program.filename}")
-        open_program(program)
-      else:
+for program in programs:
+  try:
+    if check_if_closed(program):
+      print(f"Opening program: {program.filename}")
+      open_program(program)
+    else:
         print(f"Program: {program.filename} is already open")
-    except:
+  except:
       pass
